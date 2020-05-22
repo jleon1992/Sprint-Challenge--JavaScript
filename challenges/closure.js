@@ -18,7 +18,20 @@ myFunction();
 
 // Explanation: 
 
-
+// because it can access it parent scope, if you created a variable inside of nested function it couldn't be accessed globally or in myFunction.
 /* Task 2: Counter */
 
 /* Create a function called `sumation` that accepts a parameter and uses a counter to return the summation of that number. For example, `summation(4)` should return 10 because 1+2+3+4 is 10. */
+function sumation(num){
+  counter = 0;
+  return function sum(){
+    for(let i=0 ; i <= num; i++){
+      
+       counter += i
+      console.log(counter)
+    }
+    return counter;
+  }
+}
+var sum = sumation(4);
+console.log(sum())
